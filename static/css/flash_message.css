@@ -1,0 +1,99 @@
+.flash-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    z-index: 9999;
+}
+
+
+.flash-message {
+    min-width: 300px;
+    max-width: 400px;
+
+    padding: 15px 18px;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    font-size: 14px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+    animation: flashSlideIn 0.4s ease;
+}
+
+
+/* SUCCESS */
+
+.flash-message.success {
+    background: #d1e7dd;
+    color: #0f5132;
+    border: 1px solid #badbcc;
+}
+
+
+/* ERROR */
+
+.flash-message.error {
+    background: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+}
+
+
+/* WARNING */
+
+.flash-message.warning {
+    background: #fff3cd;
+    color: #664d03;
+    border: 1px solid #ffecb5;
+}
+
+
+/* INFO */
+
+.flash-message.info {
+    background: #cff4fc;
+    color: #055160;
+    border: 1px solid #b6effb;
+}
+
+
+/* Close button */
+
+.flash-close {
+    background: none;
+    border: none;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    color: inherit;
+
+    line-height: 1;
+}
+
+
+@keyframes flashSlideIn {
+
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}

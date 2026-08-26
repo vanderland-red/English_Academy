@@ -1,0 +1,63 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/flash_message.css' %}">
+
+{% if messages %}
+    <div class="flash-container">
+
+        {% for message in messages %}
+
+            <div class="flash-message {{ message.tags }}">
+
+                <span class="flash-text">
+                    {{ message }}
+                </span>
+
+                <button class="flash-close" onclick="closeFlash(this)">
+                    &times;
+                </button>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+{% endif %}
+
+
+
+<script>
+    function closeFlash(button) {
+
+    const message = button.parentElement;
+
+    message.style.opacity = "0";
+    message.style.transform = "translateX(100%)";
+
+    setTimeout(() => {
+        message.remove();
+    }, 400);
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const messages = document.querySelectorAll(".flash-message");
+
+    messages.forEach(message => {
+
+        setTimeout(() => {
+
+            message.style.opacity = "0";
+            message.style.transform = "translateX(100%)";
+
+            setTimeout(() => {
+                message.remove();
+            }, 400);
+
+        }, 3000);
+
+    });
+
+});
+</script>

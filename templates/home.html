@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+صفحه کاربر | بادی استرانگ
+{% endblock %}
+
+{% block body %}  
+   
+
+    <div>
+        <a href="{% url 'about' %}">ABOUT</a><br><br>
+        <a href="{% url 'user:register' %}">Register</a><br><br>
+        <a href="{% url 'user:login' %}">Login</a>
+    </div>
+
+
+{% endblock %}

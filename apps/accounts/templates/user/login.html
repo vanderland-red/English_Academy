@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+درباره ما | آکادمی زبان استیو
+{% endblock %}
+
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+ <h1>ورود به حساب کاربری</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <div>
+            <label for="{{ form.phone.id_for_label }}">
+                شماره تلفن
+            </label>
+
+            {{ form.phone }}
+
+        </div>
+
+
+        <div>
+            <label for="{{ form.password.id_for_label }}">
+                رمز عبور
+            </label>
+
+            {{ form.password }}
+
+        </div>
+
+
+        <button type="submit">
+            ورود
+        </button>
+
+    </form>
+
+    <p>
+        حساب کاربری ندارید؟
+        <a href="{% url 'user:register' %}">
+            ثبت نام
+        </a>
+    </p>
+
+
+{% endblock %}

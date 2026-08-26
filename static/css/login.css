@@ -1,0 +1,194 @@
+/* =========================
+   Login Page
+========================= */
+
+body {
+    direction: rtl;
+}
+
+/* عنوان */
+h1 {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+
+    font-size: 30px;
+    font-weight: 700;
+    color: #222;
+}
+
+
+/* فرم */
+form {
+    width: 400px;
+    margin: 0 auto;
+
+    padding: 35px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    box-sizing: border-box;
+}
+
+
+/* هر بخش فرم */
+form > div {
+    margin-bottom: 20px;
+}
+
+
+/* Label */
+label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    color: #333;
+}
+
+
+/* Input ها */
+input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    box-sizing: border-box;
+
+    transition: 0.3s;
+}
+
+
+/* وقتی روی input کلیک می‌شود */
+input:focus {
+    border-color: #4f46e5;
+
+    box-shadow:
+        0 0 0 3px rgba(79, 70, 229, 0.12);
+}
+
+
+/* دکمه ورود */
+button {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* Hover دکمه */
+button:hover {
+    background: #4338ca;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(79, 70, 229, 0.25);
+}
+
+
+/* خطاهای فرم */
+.errorlist {
+    margin: 7px 0 0;
+    padding: 0;
+
+    list-style: none;
+
+    color: #dc2626;
+
+    font-size: 13px;
+}
+
+
+/* خطای کلی فرم */
+form > .errorlist {
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    padding: 10px 12px;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+}
+
+
+/* متن ثبت نام */
+p {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* لینک ثبت نام */
+p a {
+    color: #4f46e5;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+
+p a:hover {
+    color: #3730a3;
+
+    text-decoration: underline;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 500px) {
+
+    form {
+        width: calc(100% - 30px);
+
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}
