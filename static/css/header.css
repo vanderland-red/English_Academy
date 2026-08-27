@@ -1,14 +1,21 @@
 /* =========================
-   Header
+   Reset
 ========================= */
-body{
+
+body {
     margin: 0;
     padding: 0;
 }
+
+
+/* =========================
+   Header
+========================= */
+
 header {
     width: 100%;
     background: linear-gradient(135deg, #0f172a, #1e3a5f);
-    padding: 18px 6%;
+    padding: 15px 5%;
     box-sizing: border-box;
     font-family: Vazirmatn, sans-serif;
     direction: rtl;
@@ -25,8 +32,33 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 25px;
+
+    max-width: 1400px;
+    margin: 0 auto;
 }
+
+
+/* =========================
+   Logo
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    text-decoration: none;
+
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+
+}
+
 
 
 /* =========================
@@ -36,46 +68,61 @@ header {
 .nave-parent ul {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+
+    gap: 4px;
 
     list-style: none;
+
     padding: 0;
     margin: 0;
 
-    flex-wrap: wrap;
+    flex: 1;
 }
 
+
+/* =========================
+   Menu Links
+========================= */
 
 .nave-parent ul li a {
     display: block;
 
     color: #ffffff;
+
     text-decoration: none;
 
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
 
-    padding: 10px 14px;
+    padding: 10px 12px;
+
     border-radius: 8px;
 
-    transition: 0.3s ease;
-}
+    transition: all 0.3s ease;
 
-
-/* Hover */
-
-.nave-parent ul li a:hover {
-    background-color: #38bdf8;
-    color: #0f172a;
-
-    transform: translateY(-2px);
-
-    box-shadow: 0 6px 15px rgba(56, 189, 248, 0.3);
+    white-space: nowrap;
 }
 
 
 /* =========================
-   Search Box
+   Hover
+========================= */
+
+.nave-parent ul li a:hover {
+    background-color: #38bdf8;
+
+    color: #0f172a;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(56, 189, 248, 0.3);
+}
+
+
+/* =========================
+   Search
 ========================= */
 
 .header-search {
@@ -88,13 +135,18 @@ header {
 
     overflow: hidden;
 
-    min-width: 230px;
+    width: 230px;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 
-/* Input */
+/* =========================
+   Search Input
+========================= */
 
 .header-search input {
     width: 100%;
@@ -102,16 +154,25 @@ header {
     border: none;
     outline: none;
 
-    padding: 11px 14px;
+    padding: 11px 12px;
 
     font-family: inherit;
+
     font-size: 14px;
 
     color: #334155;
+
+    box-sizing: border-box;
+}
+
+.header-search input::placeholder {
+    color: #94a3b8;
 }
 
 
-/* Button */
+/* =========================
+   Search Button
+========================= */
 
 .header-search button {
     border: none;
@@ -120,15 +181,17 @@ header {
 
     color: #0f172a;
 
-    padding: 11px 16px;
+    padding: 11px 14px;
 
     font-family: inherit;
+
     font-size: 14px;
+
     font-weight: bold;
 
     cursor: pointer;
 
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 
     white-space: nowrap;
 }
@@ -141,9 +204,16 @@ header {
 }
 
 
+/* =========================
+   Search Icon
+========================= */
+
 .header-search button span {
     font-size: 18px;
+
     margin-left: 4px;
+
+    vertical-align: middle;
 }
 
 
@@ -151,37 +221,88 @@ header {
    Responsive
 ========================= */
 
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
+
+    .nave-parent {
+        flex-wrap: wrap;
+    }
+
+    .nave-parent ul {
+        order: 3;
+
+        width: 100%;
+
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    .nave-parent {
+        gap: 15px;
+    }
+
+    .logo img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .header-search {
+        width: 200px;
+    }
+
+    .nave-parent ul li a {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
 
     .nave-parent {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .nave-parent ul {
+    .logo {
         justify-content: center;
     }
 
-    .header-search {
-        width: 100%;
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    header {
-        padding: 15px;
+    .logo img {
+        width: 70px;
+        height: 70px;
     }
 
     .nave-parent ul {
+        justify-content: center;
+
         gap: 3px;
     }
 
     .nave-parent ul li a {
-        font-size: 13px;
-        padding: 8px 10px;
+        font-size: 12px;
+
+        padding: 7px 8px;
+    }
+
+    .header-search {
+        width: 100%;
     }
 
 }
