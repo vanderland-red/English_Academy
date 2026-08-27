@@ -10,7 +10,12 @@
             آکادمی زبان استیو
         {% endblock %}
     </title>
+
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+
     {% block header %}
+        {% include "components/header.html" %}
     {% endblock %}
 </head>
 
