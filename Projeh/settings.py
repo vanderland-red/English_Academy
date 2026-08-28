@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home',
 
     'apps.accounts',
+    'apps.courses',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
