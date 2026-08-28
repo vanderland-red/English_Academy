@@ -12,5 +12,23 @@
         <a href="{% url 'user:login' %}">Login</a>
     </div>
 
+    {% for course in courses %}
+
+    <div class="course-card">
+
+        <h2>{{ course.title }}</h2>
+
+        <p>
+            {{ course.description }}
+        </p>
+
+        <span>
+            {{ course.price }} تومان
+        </span>
+
+    </div>
+
+{% endfor %}
+
 
 {% endblock %}
