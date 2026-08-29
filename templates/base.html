@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fa" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -11,11 +11,12 @@
         {% endblock %}
     </title>
 
-    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header_style.css' %}">
     <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
 
+    <!-- Header --> 
     {% block header %}
-            {% include "components/header.html" %}
+        {% include "components/header.html" %}
     {% endblock %}
 
 </head>
@@ -24,12 +25,17 @@
 <body>
 
 
+    <!-- flash message -->
     {% include "components/flash_message.html" %}
 
-        {% block body %}
-                
-        {% endblock %}
 
+    <!-- Page Content -->
+    {% block body %}
+                
+    {% endblock %}
+
+
+    <!-- JavaScript -->
     <script src="{% static 'js/validation.js' %}"></script>
 
 </body>

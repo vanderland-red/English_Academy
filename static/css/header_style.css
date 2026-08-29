@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+header {
+    width: 100%;
+    background: linear-gradient(135deg, #0b1f3a, #123f66);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px ;
+    overflow: hidden;
+}
+
+
+/* =========================
+   Navbar
+========================= */
+
+.nave-parent {
+    max-width: 1400px;
+    min-height: 90px;
+    margin: 0 auto;
+    padding: 10px 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+
+/* =========================
+   Logo
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    transition: 0.3s ease;
+    border-radius: 10px;
+}
+
+
+
+/* =========================
+   Menu
+========================= */
+
+.nave-parent ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    flex: 1;
+}
+
+
+/* =========================
+   Menu Links
+========================= */
+
+.nave-parent ul li a {
+    display: block;
+
+    color: #e8f4ff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 11px 15px;
+
+    border-radius: 10px;
+
+    transition: all 0.3s ease;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   Menu Hover
+========================= */
+
+.nave-parent ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   Register Button
+========================= */
+
+.nave-parent ul li:last-child {
+    margin-right: auto;
+}
+
+.nave-parent ul li:last-child a {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+
+    color: #ffffff;
+
+    font-weight: 700;
+
+    padding: 11px 22px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.25);
+}
+
+
+/* =========================
+   Register Hover
+========================= */
+
+.nave-parent ul li:last-child a:hover {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.35);
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 1000px) {
+
+    .nave-parent {
+        padding: 10px 20px;
+        gap: 20px;
+    }
+
+    .nave-parent ul {
+        gap: 2px;
+    }
+
+    .nave-parent ul li a {
+        font-size: 13px;
+        padding: 9px 10px;
+    }
+
+    .nave-parent ul li:last-child a {
+        padding: 9px 15px;
+    }
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 800px) {
+
+    .nave-parent {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nave-parent ul {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nave-parent ul li:last-child {
+        margin-right: 0;
+    }
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+
+    .nave-parent {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .logo img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .nave-parent ul {
+        gap: 5px;
+    }
+
+    .nave-parent ul li a {
+        font-size: 12px;
+        padding: 8px 9px;
+    }
+
+    .nave-parent ul li:last-child a {
+        padding: 8px 13px;
+    }
+}
