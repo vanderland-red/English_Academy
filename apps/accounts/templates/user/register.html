@@ -2,16 +2,16 @@
 {% load static %}
 
 {% block title %}
-درباره ما | آکادمی زبان استیو
+ثبت نام | آکادمی زبان استیو
 {% endblock %}
 
-<!-- عدم نمایش هدر-->
-{% block header %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
 {% endblock %}
 
 {% block body %}
-<link rel="stylesheet" href="{% static 'css/register.css' %}">
 
+<h1>ثبت نام</h1>
 
 <form method="POST">
     {% csrf_token %}

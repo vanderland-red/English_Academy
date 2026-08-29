@@ -11,18 +11,25 @@
         {% endblock %}
     </title>
 
-    <link rel="stylesheet" href="{% static 'css/header_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 
-    <!-- Header --> 
-    {% block header %}
-        {% include "components/header.html" %}
+    <!-- css style -->
+    {% block css %}
     {% endblock %}
+
 
 </head>
 
 
 <body>
+
+
+    <!-- Header --> 
+    {% block header %}
+        {% include "components/header.html" %}
+    {% endblock %}
 
 
     <!-- flash message -->

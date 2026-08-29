@@ -1,32 +1,91 @@
-body {
-    background: linear-gradient(135deg, #eef5ff 0%, #f8fbff 100%);
+/* =========================
+   Register Page
+========================= */
 
+body {
+    direction: rtl;
+
+    background: linear-gradient(
+        135deg,
+        #eef7ff 0%,
+        #f7fbff 50%,
+        #ffffff 100%
+    );
+
+    font-family: Vazirmatn, Tahoma, sans-serif;
 }
 
-/* فرم */
-form {
-    width: 100%;
-    max-width: 430px;
 
-    background: #ffffff;
+/* =========================
+   Title
+========================= */
+
+h1 {
+    text-align: center;
+
+    margin-top: 50px;
+    margin-bottom: 28px;
+
+    font-size: 30px;
+    font-weight: 800;
+
+    color: #123b63;
+}
+
+
+/* خط زیر عنوان */
+
+h1::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin: 10px auto 0;
+
+    border-radius: 10px;
+
+    background: #4f46e5;
+}
+
+
+/* =========================
+   Register Form
+========================= */
+
+form {
+    width: 430px;
+    max-width: calc(100% - 30px);
+
+    margin: 0 auto 50px;
 
     padding: 38px 35px;
 
-    border-radius: 22px;
+    background: #ffffff;
 
-    border: 1px solid #e7edf7;
+    border-radius: 20px;
+
+    border: 1px solid #e0ebf4;
 
     box-shadow:
-        0 20px 50px rgba(22, 54, 92, 0.10),
-        0 5px 15px rgba(22, 54, 92, 0.05);
+        0 15px 40px rgba(0, 70, 120, 0.10),
+        0 3px 10px rgba(0, 70, 120, 0.05);
 
     position: relative;
+
     overflow: hidden;
 }
 
-/* نوار بالای فرم */
+
+/* =========================
+   Top Border
+========================= */
+
 form::before {
     content: "";
+
     position: absolute;
 
     top: 0;
@@ -37,135 +96,198 @@ form::before {
 
     background: linear-gradient(
         90deg,
-        #173b70,
-        #2878d7,
-        #45a8ff
+        #4f46e5,
+        #6366f1,
+        #38bdf8
     );
 }
 
-/* فاصله فیلدها */
+
+/* =========================
+   Form Group
+========================= */
+
 .form-group {
-    margin-bottom: 21px;
+    margin-bottom: 19px;
 }
 
-/* Label */
+
+/* =========================
+   Labels
+========================= */
+
 .form-group label {
     display: block;
 
     margin-bottom: 8px;
 
-    color: #173b70;
+    color: #24415c;
 
     font-size: 14px;
     font-weight: 700;
 }
 
-/* Input */
+
+/* =========================
+   Inputs
+========================= */
+
 .form-group input {
     width: 100%;
-    height: 50px;
+    height: 49px;
 
     padding: 0 15px;
 
-    background: #f9fbfe;
-
-    border: 1px solid #dce5f0;
+    border: 1.5px solid #d6e3ee;
 
     border-radius: 11px;
 
     outline: none;
 
-    color: #24364b;
+    background: #f8fbfe;
 
-    font-family: inherit;
+    color: #183b59;
+
+    font-family: Vazirmatn, Tahoma, sans-serif;
+
     font-size: 14px;
 
-    transition: all 0.25s ease;
+    transition: 0.25s ease;
 }
 
-/* Placeholder */
+
+/* =========================
+   Placeholder
+========================= */
+
 .form-group input::placeholder {
-    color: #a3afbd;
+    color: #9aabba;
 }
 
-/* Focus */
+
+/* =========================
+   Input Hover
+========================= */
+
+.form-group input:hover {
+    border-color: #a9b8e8;
+
+    background: #ffffff;
+}
+
+
+/* =========================
+   Input Focus
+========================= */
+
 .form-group input:focus {
+    border-color: #4f46e5;
+
     background: #ffffff;
 
-    border-color: #2878d7;
-
     box-shadow:
-        0 0 0 4px rgba(40, 120, 215, 0.10);
-
-    transform: translateY(-1px);
+        0 0 0 4px rgba(79, 70, 229, 0.10);
 }
 
-/* دکمه */
-button {
-    width: 100%;
-    height: 50px;
 
-    margin-top: 5px;
+/* =========================
+   Register Button
+========================= */
+
+form button {
+    width: 100%;
+    height: 51px;
+
+    margin-top: 7px;
 
     border: none;
+
     border-radius: 11px;
 
-    background: linear-gradient(
-        135deg,
-        #173b70,
-        #2878d7
-    );
+    background: #4f46e5;
 
     color: #ffffff;
 
-    font-family: inherit;
+    font-family: Vazirmatn, Tahoma, sans-serif;
+
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 800;
 
     cursor: pointer;
 
-    box-shadow:
-        0 8px 18px rgba(40, 120, 215, 0.20);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
 
-    transition: all 0.25s ease;
+    box-shadow:
+        0 7px 18px rgba(79, 70, 229, 0.20);
 }
 
-/* Hover */
-button:hover {
-    background: linear-gradient(
-        135deg,
-        #12325f,
-        #1f69c1
-    );
+
+/* =========================
+   Button Hover
+========================= */
+
+form button:hover {
+    background: #4338ca;
 
     transform: translateY(-2px);
 
     box-shadow:
-        0 12px 25px rgba(40, 120, 215, 0.25);
+        0 10px 22px rgba(79, 70, 229, 0.28);
 }
 
-/* Click */
-button:active {
+
+/* =========================
+   Button Active
+========================= */
+
+form button:active {
     transform: translateY(0);
 
     box-shadow:
-        0 5px 12px rgba(40, 120, 215, 0.18);
+        0 5px 12px rgba(79, 70, 229, 0.20);
 }
 
-/* موبایل */
-@media (max-width: 480px) {
 
-    body {
-        padding: 20px;
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        margin-top: 35px;
+
+        font-size: 25px;
     }
 
     form {
-        padding: 32px 25px;
-        border-radius: 18px;
+        width: calc(100% - 30px);
+
+        padding: 32px 22px;
+
+        border-radius: 17px;
     }
 
-    .form-group input,
-    button {
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .form-group input {
+        height: 47px;
+
+        font-size: 13px;
+    }
+
+    form button {
         height: 48px;
+
+        font-size: 14px;
     }
 }
