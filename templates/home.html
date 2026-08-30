@@ -1,39 +1,37 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
-صفحه کاربر | آکادمی زبان استیو
+دوره‌های آموزشی | آکادمی زبان استیو
 {% endblock %}
 
-{% block body %}  
-   
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 
-    <div>
-        <a href="{% url 'user:register' %}">ثبت نام</a><br><br>
-        <a href="{% url 'user:login' %}">ورود</a>
+{% block body %}
+
+<div class="courses-container">
+
+    <h1>دوره‌های آموزشی</h1>
+
+    <div class="courses">
+
+        {% for course in courses %}
+
+            <a href="{% url 'course:detail' course.id %}" class="course-card">
+
+                <h2>{{ course.title }}</h2>
+
+                <p>{{ course.description }}</p>
+
+
+            </a>
+
+        {% endfor %}
+
     </div>
 
-    <!-- نمایش پکیج در صفحه اصلی -->
-     
-
-    {% for course in courses %}
-
-    <a href="#">
-        <div class="course-card">
-
-            <h2>{{ course.title }}</h2>
-
-            <p>
-                {{ course.description }}
-            </p>
-
-            <span>
-                {{ course.price }} تومان
-            </span>
-
-        </div>
-    </a>
-
-{% endfor %}
-
+</div>
 
 {% endblock %}

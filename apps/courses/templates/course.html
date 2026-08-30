@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+خرید دوره | آکادمی زبان استیو
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/course.css' %}">
+{% endblock %}
+
+{% block body %}
+<h1>hello COurse mr morgan</h1>
+
+<h1>{{ course.title }}</h1>
+
+<p>{{ course.description }}</p>
+
+<span>{{ course.price }} تومان</span>
+
+<a href="#">
+    خرید دوره
+</a>
+
+{% endblock %}

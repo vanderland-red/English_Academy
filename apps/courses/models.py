@@ -1,8 +1,8 @@
 from django.db import models
+from apps.accounts.models import User
 
-from django.db import models
 
-
+# دوره
 class Course(models.Model):
 
     title = models.CharField(max_length=200)
@@ -12,3 +12,16 @@ class Course(models.Model):
 
     class Meta:
         db_table = 'courses'
+
+
+
+# ثبت نام کاربر در دوره
+class Enrollment(models.Model):
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_paid = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = 'enrollments'

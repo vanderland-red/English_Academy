@@ -1,293 +1,127 @@
-/* =========================
-   Register Page
-========================= */
-
 body {
     direction: rtl;
-
-    background: linear-gradient(
-        135deg,
-        #eef7ff 0%,
-        #f7fbff 50%,
-        #ffffff 100%
-    );
-
-    font-family: Vazirmatn, Tahoma, sans-serif;
+    background: linear-gradient(135deg, #eef4ff, #f8fbff);
+    min-height: 100vh;
 }
 
-
-/* =========================
-   Title
-========================= */
-
+/* عنوان */
 h1 {
     text-align: center;
-
     margin-top: 50px;
-    margin-bottom: 28px;
-
-    font-size: 30px;
-    font-weight: 800;
-
-    color: #123b63;
-}
-
-
-/* خط زیر عنوان */
-
-h1::after {
-    content: "";
-
-    display: block;
-
-    width: 55px;
-    height: 4px;
-
-    margin: 10px auto 0;
-
-    border-radius: 10px;
-
-    background: #4f46e5;
-}
-
-
-/* =========================
-   Register Form
-========================= */
-
-form {
-    width: 430px;
-    max-width: calc(100% - 30px);
-
-    margin: 0 auto 50px;
-
-    padding: 38px 35px;
-
-    background: #ffffff;
-
-    border-radius: 20px;
-
-    border: 1px solid #e0ebf4;
-
-    box-shadow:
-        0 15px 40px rgba(0, 70, 120, 0.10),
-        0 3px 10px rgba(0, 70, 120, 0.05);
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-
-/* =========================
-   Top Border
-========================= */
-
-form::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    right: 0;
-
-    width: 100%;
-    height: 5px;
-
-    background: linear-gradient(
-        90deg,
-        #4f46e5,
-        #6366f1,
-        #38bdf8
-    );
-}
-
-
-/* =========================
-   Form Group
-========================= */
-
-.form-group {
-    margin-bottom: 19px;
-}
-
-
-/* =========================
-   Labels
-========================= */
-
-.form-group label {
-    display: block;
-
-    margin-bottom: 8px;
-
-    color: #24415c;
-
-    font-size: 14px;
+    margin-bottom: 25px;
+    color: #173b7a;
+    font-size: 32px;
     font-weight: 700;
 }
 
+/* فرم */
+form {
+    width: 420px;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(25, 65, 120, 0.12);
+    border: 1px solid #e8eef8;
+}
 
-/* =========================
-   Inputs
-========================= */
+/* گروه فرم */
+.form-group {
+    margin-bottom: 20px;
+}
 
+/* Label */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #26364d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Input */
 .form-group input {
     width: 100%;
-    height: 49px;
-
-    padding: 0 15px;
-
-    border: 1.5px solid #d6e3ee;
-
-    border-radius: 11px;
-
-    outline: none;
-
-    background: #f8fbfe;
-
-    color: #183b59;
-
-    font-family: Vazirmatn, Tahoma, sans-serif;
-
+    box-sizing: border-box;
+    padding: 13px 15px;
+    border: 1px solid #d8e0ec;
+    border-radius: 10px;
+    background: #f9fbfe;
+    color: #26364d;
     font-size: 14px;
-
+    outline: none;
     transition: 0.25s ease;
 }
 
-
-/* =========================
-   Placeholder
-========================= */
-
-.form-group input::placeholder {
-    color: #9aabba;
-}
-
-
-/* =========================
-   Input Hover
-========================= */
-
-.form-group input:hover {
-    border-color: #a9b8e8;
-
-    background: #ffffff;
-}
-
-
-/* =========================
-   Input Focus
-========================= */
-
+/* حالت Focus */
 .form-group input:focus {
-    border-color: #4f46e5;
-
+    border-color: #3d73d9;
     background: #ffffff;
-
-    box-shadow:
-        0 0 0 4px rgba(79, 70, 229, 0.10);
+    box-shadow: 0 0 0 4px rgba(61, 115, 217, 0.10);
 }
 
+/* Placeholder */
+.form-group input::placeholder {
+    color: #a3afbf;
+}
 
-/* =========================
-   Register Button
-========================= */
-
+/* دکمه */
 form button {
     width: 100%;
-    height: 51px;
-
-    margin-top: 7px;
-
+    padding: 14px;
+    margin-top: 5px;
     border: none;
-
-    border-radius: 11px;
-
-    background: #4f46e5;
-
-    color: #ffffff;
-
-    font-family: Vazirmatn, Tahoma, sans-serif;
-
-    font-size: 15px;
-    font-weight: 800;
-
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2457a6, #3d73d9);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        background 0.25s ease;
-
-    box-shadow:
-        0 7px 18px rgba(79, 70, 229, 0.20);
+    transition: 0.25s ease;
 }
 
-
-/* =========================
-   Button Hover
-========================= */
-
+/* Hover دکمه */
 form button:hover {
-    background: #4338ca;
-
     transform: translateY(-2px);
-
-    box-shadow:
-        0 10px 22px rgba(79, 70, 229, 0.28);
+    box-shadow: 0 8px 20px rgba(36, 87, 166, 0.25);
 }
 
-
-/* =========================
-   Button Active
-========================= */
-
-form button:active {
-    transform: translateY(0);
-
-    box-shadow:
-        0 5px 12px rgba(79, 70, 229, 0.20);
+/* متن پایین فرم */
+form + div {
+    text-align: center;
+    margin-top: 20px;
+    color: #68768a;
+    font-size: 14px;
 }
 
+/* لینک ورود */
+form + div a {
+    color: #2457a6;
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: 5px;
+    transition: 0.2s ease;
+}
+
+form + div a:hover {
+    color: #173b7a;
+    text-decoration: underline;
+}
 
 /* =========================
    Responsive
 ========================= */
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
 
     h1 {
-        margin-top: 35px;
-
-        font-size: 25px;
+        font-size: 27px;
+        margin-top: 30px;
     }
 
     form {
-        width: calc(100% - 30px);
-
-        padding: 32px 22px;
-
-        border-radius: 17px;
-    }
-
-    .form-group {
-        margin-bottom: 16px;
-    }
-
-    .form-group label {
-        font-size: 13px;
-    }
-
-    .form-group input {
-        height: 47px;
-
-        font-size: 13px;
-    }
-
-    form button {
-        height: 48px;
-
-        font-size: 14px;
+        padding: 25px 20px;
     }
 }
+
