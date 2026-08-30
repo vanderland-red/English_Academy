@@ -18,7 +18,7 @@
 
 <span>{{ course.price }} تومان</span>
 
-<a href="#">
+<a href="{% url 'course:buy' course.id %}">
     خرید دوره
 </a>
 
