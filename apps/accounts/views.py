@@ -4,6 +4,11 @@ from django.contrib import messages
 from django.contrib.auth import login, logout
 from .forms import UserRegisterForm, UserLoginForm
 
+class UserDashboardView(View):
+
+    def get(self, request):
+        return render(request, 'user/dashboard.html')
+
 
 class UserRegisterView(View):
 
@@ -24,7 +29,7 @@ class UserRegisterView(View):
 
             messages.success(request,'ثبت نام با موفقیت انجام شد.')
 
-            return redirect('/')
+            return redirect('user:dashboard')
         else:
 
             if form.errors.get('username'):
@@ -60,7 +65,7 @@ class UserLoginView(View):
             login(request, form.user)
 
             messages.success(request,'با موفقیت وارد حساب کاربری شدید')
-            return redirect('/')
+            return redirect('user:dashboard')
         
         else :
 

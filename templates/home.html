@@ -14,21 +14,24 @@
 
     <!-- نمایش پکیج در صفحه اصلی -->
      
+
     {% for course in courses %}
 
-    <div class="course-card">
+    <a href="#">
+        <div class="course-card">
 
-        <h2>{{ course.title }}</h2>
+            <h2>{{ course.title }}</h2>
 
-        <p>
-            {{ course.description }}
-        </p>
+            <p>
+                {{ course.description }}
+            </p>
 
-        <span>
-            {{ course.price }} تومان
-        </span>
+            <span>
+                {{ course.price }} تومان
+            </span>
 
-    </div>
+        </div>
+    </a>
 
 {% endfor %}
 
