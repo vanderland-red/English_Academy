@@ -2,16 +2,58 @@
 {% load static %}
 
 {% block title %}
-خرید دوره | آکادمی زبان استیو
-{% endblock %}
-
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/payment.css' %}">
+پرداخت دوره | آکادمی زبان استیو
 {% endblock %}
 
 {% block body %}
-<h1>hello My Pament</h1>
+
+<link rel="stylesheet" href="{% static 'css/payment.css' %}">
+
+<div class="payment-container">
+
+    <div class="payment-card">
+
+        <div class="payment-header">
+            <h2>پرداخت دوره</h2>
+            <p>آکادمی زبان استیو</p>
+        </div>
 
 
+        <div class="course-info">
+
+            <div class="info-row">
+                <span>نام دوره</span>
+                <strong>{{ course.title }}</strong>
+            </div>
+
+
+            <div class="info-row">
+                <span>مبلغ دوره</span>
+                <strong>
+                    {{ course.price|floatformat:0 }} تومان
+                </strong>
+            </div>
+
+        </div>
+
+
+        <form action="{% url 'course:payment' enrollment.id %}"  method="POST">
+
+            {% csrf_token %}
+
+            <button type="submit" class="pay-btn">
+                پرداخت و ادامه
+            </button>
+
+        </form>
+
+
+        <a href="{% url 'course:detail' course.id %}" class="back-btn">
+            بازگشت به دوره
+        </a>
+
+    </div>
+
+</div>
 
 {% endblock %}

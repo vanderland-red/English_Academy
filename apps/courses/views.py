@@ -2,8 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
-
-from .models import Course, Enrollment
+from .models import Course, Enrollment, Payment
 
 
 #=================
@@ -68,3 +67,88 @@ class PaymentView(LoginRequiredMixin, View):
                 'course': enrollment.course
             }
         )
+
+    def post(self, request, enrollment_id):
+
+        enrollment = get_object_or_404(
+            Enrollment,
+            id=enrollment_id,
+            user=request.user,
+            is_paid=False
+        )
+
+        payment = Payment.objects.create(
+            enrollment=enrollment,
+            amount=enrollment.course.price
+        )
+
+        return redirect('course:mock-payment', payment.authority) # کد تراکنش توی مدل ها تولید میشه خودش
+
+
+
+
+#===================
+# Mock Payment Show
+#===================
+class MockPaymentView(LoginRequiredMixin, View):
+
+    def get(self, request, authority):
+
+        payment = get_object_or_404(
+            Payment,
+            authority=authority,
+            enrollment__user=request.user,
+            status='pending'
+        )
+
+        return render(
+            request,
+            'course/mock_payment.html',
+            {
+                'payment': payment,
+                'course': payment.enrollment.course
+            }
+        )
+
+
+
+#================
+# Verify Payment
+#================
+class VerifyPaymentView(LoginRequiredMixin, View):
+
+    def post(self, request, authority):
+
+        payment = get_object_or_404(
+            Payment,
+            authority=authority,
+            enrollment__user=request.user,
+            status='pending'
+        )
+
+        status = request.POST.get('status')
+
+        if status == 'success':
+
+            payment.status = 'success'
+            payment.ref_id = str(payment.id)
+
+            payment.save()
+
+            payment.enrollment.is_paid = True
+            payment.enrollment.save()
+
+            messages.success(request,'پرداخت با موفقیت انجام شد.')
+
+            return redirect('user:dashboard')
+
+        elif status == 'failed':
+
+            payment.status = 'failed'
+            payment.save()
+
+            messages.error(request,'پرداخت لغو شد.')
+
+            return redirect('course:payment', payment.enrollment.id)
+
+        return redirect('course:mock-payment', payment.authority)
