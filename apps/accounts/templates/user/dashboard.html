@@ -10,7 +10,8 @@
 {% endblock %}
 
 {% block body %}
-<h1>hello mr</h1>
+<h1>hello mr {{ user.username }}</h1>
+
 
 <a href="{% url 'user:logout' %}">خروج از حساب</a>
 

@@ -1,13 +1,16 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from .forms import UserRegisterForm, UserLoginForm
 
-class UserDashboardView(View):
+
+class UserDashboardView(LoginRequiredMixin,View):
 
     def get(self, request):
-        return render(request, 'user/dashboard.html')
+        user = request.user
+        return render(request, 'user/dashboard.html', {"user": user})
 
 
 class UserRegisterView(View):
@@ -26,6 +29,8 @@ class UserRegisterView(View):
 
         if form.is_valid():
             user = form.save()
+
+            login(request, user) # کاربر لاگین شده وارد حساب میشود
 
             messages.success(request,'ثبت نام با موفقیت انجام شد.')
 

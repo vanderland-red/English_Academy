@@ -2,14 +2,14 @@
 
 <header>
 
-     <nav class="nave-parent">
+    <nav class="nave-parent">
 
         <a href="{% url 'home' %}" class="logo">
             <img src="{% static 'cover/Academy-Logo.png' %}" alt="لوگو آکادمی زبان">
         </a>
 
         <ul>
-            
+
             <li>
                 <a href="{% url 'about' %}">
                     درباره ما
@@ -46,11 +46,19 @@
                 </a>
             </li>
 
+            {% if request.user.is_authenticated %}
             <li>
-                <a href="{% url 'user:register' %}">
+                <a href="{% url 'user:dashboard' %}" class="header-btn">
+                    حساب کاربری
+                </a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'user:register' %}" class="header-btn">
                     ثبت نام
                 </a>
             </li>
+            {% endif %}
 
         </ul>
 
